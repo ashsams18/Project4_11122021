@@ -1,5 +1,5 @@
 # TRAIN AN ALGORITHM TO ANALYZE HORSE RACING DATA AND PREDICT FUTURE TRENDS.
-![horseracing.jpg] (Images/horseracing.png)
+![horseracing.jpg](Images/horseracing.png)
 
 
 ## TEAM MEMBERS
