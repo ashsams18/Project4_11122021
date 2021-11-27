@@ -1,8 +1,12 @@
-# TRAIN AN ALGORITHM TO ANALYZE HORSE RACING DATA AND PREDICT FUTURE TRENDS.
-![horseracing.jpg] (/Images/horseracing.jpg)
+# ***TRAIN AN ALGORITHM TO ANALYZE HORSE RACING DATA AND PREDICT FUTURE TRENDS***
+![horseracing.jpg](Images/horseracing.png)
+
 
 ## TEAM MEMBERS
-Arshad Sheikh (AS) Choki Mafavuke (CM) Maxwell Ansah (MA1) Muhammad Amjad (MA2)
+Arshad Sheikh (AS) 
+Choki Mafavuke (CM)
+Maxwell Ansah (MA1)
+Muhammad Amjad (MA2)
 
 ## PROJECT OUTLINE
 The aim is to download data in the form of a csv file that provides us horse racing data over 14 years fr the UK and ROI. 
