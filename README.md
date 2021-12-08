@@ -154,7 +154,7 @@ Following Dependencies were imported to work on the machine learning element of 
 
 
 
-![ML Dependencies](Images/6-Dependencies for ML.PNG)
+![6](Images/6-Dependencies-for-ML)
 
 
 
@@ -171,14 +171,14 @@ The 'DATE' column was set as an index for the dataframe.
 Connect prediction with output was performed.
 
 
-![8](Images/8-Prediction to Output.PNG)
+![8](Images/8-Prediction-to-Output.PNG)
 
 
 X was assigned as a dataframe of the features and y as a series of the outcome variable.
 
 
 
-![9](Images/9-X,Y Features.PNG)
+![9](Images/9-X,Y-Features.PNG)
 
 
 Labels ("Winner") denoted by y were assigned to the train and test data sets.
