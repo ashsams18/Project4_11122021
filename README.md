@@ -154,7 +154,7 @@ Following Dependencies were imported to work on the machine learning element of 
 
 
 
-![6](Images/6-Dependencies-for-ML)
+![6](Images/6-Dependencies-for-ML.PNG)
 
 
 
