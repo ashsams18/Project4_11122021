@@ -93,7 +93,7 @@ make_classification
 Initial review of the CSV file showed that there were over 700K rows across 42 columns.
 A 'for loop' was run to identify the unique categories across the columns.
 
-![Initial-Data](Images/1-Initial_DATA_size.PNG)
+![1-Initial_DATA_size](Images/1-Initial_DATA_size.PNG)
 
 A further review of the column data was performed and those features that weren't required in the model such as: 
 'race_ID', 'class','time','dist.f.','Month', 'Year', 'Period', 'Runners','fin_time', 'dec','weight','dec_clean','sire', 'dam', 'damsire', 'comment','race_name','btn','sp','or','rpr','horse_name','exp_chance','prob',
