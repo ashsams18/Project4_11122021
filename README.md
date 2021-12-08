@@ -1,6 +1,9 @@
 # Project 4
 ## TRAIN AN ALGORITHM TO ANALYZE HORSE RACING DATA AND PREDICT FUTURE TRENDS
+
 ![horseracing.jpg](Images/horseracing.png)
+
+
 ### A.Sheikh - C Mafavuke - M Ansah - M Amjad
 
 ## INTRODUCTION
@@ -94,16 +97,24 @@ make_classification
 Initial review of the CSV file showed that there were over 700K rows across 42 columns.
 A 'for loop' was run to identify the unique categories across the columns.
 
+
 ![1-Initial_DATA_size.PNG](Images/1-Initial_DATA_size.PNG)
+
+
 
 A further review of the column data was performed and those features that weren't required in the model such as: 
 'race_ID', 'class','time','dist.f.','Month', 'Year', 'Period', 'Runners','fin_time', 'dec','weight','dec_clean','sire', 'dam', 'damsire', 'comment','race_name','btn','sp','or','rpr','horse_name','exp_chance','prob',
 were removed. Feature selection was based on elements in the data that contirbuted most to the prediction variable or output that we are interested in. Having irrelevant features in the data could decrease the accuracy of the model, especially the logistic regression that we are using. Our selection of features before modeling the data was to reduce overfitting, improve accuracy and reduce training time.
 
+
+
 ![2-Dropped_DATA.PNG](Images/2-Dropped_DATA.PNG)
 
 
+
 The columns in the dataframe were renamed for ease in understanding their meanings.
+
+
 ![3-Rename_Columns.PNG](Images/3-Rename_Columns.PNG)
 
 
@@ -118,11 +129,20 @@ The number of unique values was reduced by binning 'rare' categorical variables 
 The raw data size was reduced to under 150K rows over 18 columns.
 Further cleaning of the data was performed by reducing categorical variables (band) and non numerical values to a numerical value in the btn (beaten) column. 
 
+
+
 ![4-Conversion_to_numerical.PNG](Images/4-Conversion_to_numerical.PNG)
+
+
 
 The final cleaned dataframes were converted and exported as a CSV file.
 
+
+
 ![5-Export_to_CSV](Images/5-Export_to_CSV.PNG)
+
+
+
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -130,5 +150,72 @@ The final cleaned dataframes were converted and exported as a CSV file.
 
 Jupyter notebook was utilised to further prepare the data and 
 
+Following Dependencies were imported to work on the machine learning element of this project.
 
+
+
+![ML Dependencies](Images/6-Dependencies for ML.PNG)
+
+
+
+The machine learning data prepared above was imported into this notebook.
+
+The 'DATE' column was set as an index for the dataframe.
+
+
+
+![7](Images/7-Date-Set-Index.PNG)
+
+
+
+Connect prediction with output was performed.
+
+
+![8](Images/8-Prediction to Output.PNG)
+
+
+X was assigned as a dataframe of the features and y as a series of the outcome variable.
+
+
+
+![9](Images/9-X,Y Features.PNG)
+
+
+Labels ("Winner") denoted by y were assigned to the train and test data sets.
+
+
+![10](Images/10-Y-Label.PNG)
+
+
+'get_dummies' for train data step was performed using:
+
+**X_dum = pd.get_dummies((X_), drop_first=True)
+X_dum.head(2)**
+
+
+sklearn was used to split the dataset and also to split the preprocessed data into a training and testing dataset.
+
+**X_train, X_test, y_train, y_test = train_test_split(X_dum, y_label, train_size = 0.6, random_state=1)**
+
+
+Next step was to scale and fit the data:
+
+**scaler = StandardScaler()
+
+X_scaler = scaler.fit(X_train)
+
+X_train_scaled = X_scaler.transform(X_train)
+X_test_scaled = X_scaler.transform(X_test)**
+
+A Logistic Regression was performed:
+
+** classifier = LogisticRegression(fit_intercept=True, random_state=1, max_iter = 400,verbose=0, multi_class='auto')
+classifier.fit(X_train_scaled,y_train)
+classifier.score(X_train_scaled,y_train)
+classifier.score(X_test_scaled,y_test) **
+
+which returned the following values:
+
+** Training Scaled Data Score: 0.9997335890878091
+Test  Scaled Data Score: 0.9993606138107417 **
 
