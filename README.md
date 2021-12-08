@@ -99,11 +99,11 @@ A further review of the column data was performed and those features that weren'
 'race_ID', 'class','time','dist.f.','Month', 'Year', 'Period', 'Runners','fin_time', 'dec','weight','dec_clean','sire', 'dam', 'damsire', 'comment','race_name','btn','sp','or','rpr','horse_name','exp_chance','prob',
 were removed. Feature selection was based on elements in the data that contirbuted most to the prediction variable or output that we are interested in. Having irrelevant features in the data could decrease the accuracy of the model, especially the logistic regression that we are using. Our selection of features before modeling the data was to reduce overfitting, improve accuracy and reduce training time.
 
-![Dropped-Data](2-Dropped_DATA.PNG)
+![2-Dropped_DATA](2-Dropped_DATA.PNG)
 
 
 The columns in the dataframe were renamed for ease in understanding their meanings.
-![Rename-Columns](3-Rename_Columns.PNG)
+![3-Rename_Columns](3-Rename_Columns.PNG)
 
 
 Based on the various columns explored, it is clearly necessary to develop a model which combines both fundamental features of each horse and market generated information.
@@ -117,11 +117,11 @@ The number of unique values was reduced by binning 'rare' categorical variables 
 The raw data size was reduced to under 150K rows over 18 columns.
 Further cleaning of the data was performed by reducing categorical variables (band) and non numerical values to a numerical value in the btn (beaten) column. 
 
-![Rename-Columns](4-Conversion_to_numerical.PNG)
+![4-Conversion_to_numerical](4-Conversion_to_numerical.PNG)
 
 The final cleaned dataframes were converted and exported as a CSV file.
 
-![Rename-Columns](5-Export_to_CSV.PNG)
+![5-Export_to_CSV](5-Export_to_CSV.PNG)
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## MACHINE LEARNING DATA PROCESSING
