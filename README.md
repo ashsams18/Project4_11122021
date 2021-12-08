@@ -200,22 +200,22 @@ sklearn was used to split the dataset and also to split the preprocessed data in
 
 Next step was to scale and fit the data:
 
-**scaler = StandardScaler()
+**scaler = StandardScaler()**
 
-X_scaler = scaler.fit(X_train)
+**X_scaler = scaler.fit(X_train)**
 
-X_train_scaled = X_scaler.transform(X_train)
-X_test_scaled = X_scaler.transform(X_test)**
+**X_train_scaled = X_scaler.transform(X_train)**
+**X_test_scaled = X_scaler.transform(X_test)**
 
 A Logistic Regression was performed:
 
-** classifier = LogisticRegression(fit_intercept=True, random_state=1, max_iter = 400,verbose=0, multi_class='auto')
-classifier.fit(X_train_scaled,y_train)
-classifier.score(X_train_scaled,y_train)
-classifier.score(X_test_scaled,y_test) **
+**classifier = LogisticRegression(fit_intercept=True, random_state=1, max_iter = 400,verbose=0, multi_class='auto')**
+**classifier.fit(X_train_scaled,y_train)**
+**classifier.score(X_train_scaled,y_train)**
+**classifier.score(X_test_scaled,y_test)**
 
 which returned the following values:
 
-** Training Scaled Data Score: 0.9997335890878091
-Test  Scaled Data Score: 0.9993606138107417 **
+**Training Scaled Data Score: 0.9997335890878091**
+**Test  Scaled Data Score: 0.9993606138107417**
 
