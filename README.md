@@ -1,27 +1,27 @@
 # Project 4
-## TRAIN AN ALGORITHM TO ANALYZE HORSE RACING DATA AND PREDICT FUTURE TRENDS
+## CREATE AN ALGORITHM TO ANALYZE HORSE RACING DATA AND PREDICT FUTURE OUTCOMES
 ## PROJECT OUTLINE 
-The aim is to clean the data, utilizing columns that we need and uploading to a SQL database. We will use machine learning models to create a binary supervised algorithm to make predictions for unseen data in the future.
+The aim is to clean the data, utilizing columns that we need and uploading to a SQL database. We will use machine learning models to create a binary supervised algorithm to make predictions for unseen data in the future. Our aim is to develop a model which combines both fundamental (horse features) and market-generated information (jockey/ratings etc). 
 
 ![horseracing.jpg](Images/horseracing.png)
 
 
+## PREOJECT MEMBERS
 ### A.Sheikh - C Mafavuke - M Ansah - M Amjad
 
 ## INTRODUCTION
-Our group has identfied that there is a scope to develop a model which combines both fundamental features of racing horses and market generated information.
-
-Our aim is to develop a model which combines both fundamental and market-generated information. The combining of information in a one-step model provides simplicity and also the opportunity to explore the significance of each individual fundamental variable in an explicit manner; since probabilities derived from the final market odds also appear in the model.
-
+Our group has identfied that there is a scope to develop a model which combines both fundamental features of horse racing and market generated information.
 
 ## RESOURCES
-* Kaggle
-* Jupyter Notebook
-* PG Admin
+* Kaggle (CSV File)
+* Jupyter Notebook (Coding)
+* PG Admin (SQL DATABASE)
 
 ## DATA COLLECTION
-Data was obtained from kaggle as a csv file.
-The csv file included 42 columns and over 744 thousand rows of data initially.The data was cleaned with Pandas on Jupyter Notebook. Google colab was considered as a choice of Juypter notebook, as the local machine would not support the size of the CSV file data, however, there were a lot of limitations with this application and it ran out of free space so the Jupyter Notebook route was followed. 
+Data was obtained from kaggle as a csv file. This was the only viable data available on this topic. 
+There was other data available, however, we  decided to choose the data for UK and Ireland.
+
+The csv file included 42 columns and over 744 thousand rows of data initially. The data was cleaned with Pandas on Jupyter Notebook. Google colab was considered as a choice of Juypter notebook, as the local machine would not support the size of the CSV file data, however, there were a lot of limitations with this application and it ran out of free space so the Jupyter Notebook route was followed. 
 
 The csv file included horse racing history between 2005 and 2019. Data was made up of the horse winning history, track conditions, distance, horse parentage, horse weight, age, racing group, time of the year/season the races took place etc 
 
@@ -42,61 +42,44 @@ jwinper The winning percentage of the jockey in career to date of race
 jst1miss 1 indicates when the other jockey variables are missing; 0 otherwise 
 (THE JOURNAL OF PREDICTION MARKETS2007, 1 1)
 
----------------------
-
-1) Why use this data
-
-A: this is the only viable data available on this topic. we chose to use the data for UK and Ireland as a lot of data was available..
-
-
-2) Steps taken to clean
-PANDAS
-
-
-Data size was reduced.
-
-
-
-3) which machine learning?
-Wanted to try if  we can use Keras Tuner, but could not use as the installation process was failing.
-Tried - DT , logistic regression
-
-4) steps taken for creating model
-
-
-
-5) Steps taken to sample
-
-..........................
-Once we have the final DF.....We propose to create various columns for furture users to pick and choose from.
-
-6) which D/B to use 
-
-SQL
-
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ## RAW DATA PROCESSING & CLEANING
 
 Jupyter Notebook was utilised to access the raw data from the CSV files.
 The required dependencies were imported:
 
-pandas as pd
-numpy as np
-pandas as pd
+pandas as pd,
 
-LogisticRegression
-pyplot as plt
-seaborn as sns
-StandardScaler, MinMaxScaler, LabelEncoder
-train_test_split
-DecisionTreeClassifier, plot_tree
-metrics
-preprocessing
-RandomForestClassifier
+numpy as np,
+
+LogisticRegression,
+
+pyplot as plt,
+
+seaborn as sns,
+
+StandardScaler, 
+
+MinMaxScaler, 
+
+LabelEncoder,
+
+train_test_split,
+
+DecisionTreeClassifier, 
+
+plot_tree,
+
+metrics,
+
+preprocessing,
+
+RandomForestClassifier,
+
 make_classification
 
 
-Initial review of the CSV file showed that there were over 700K rows across 42 columns.
 A 'for loop' was run to identify the unique categories across the columns.
 
 
@@ -133,26 +116,24 @@ Further cleaning of the data was performed by reducing categorical variables (ba
 
 
 
-![4-Conversion_to_numerical.PNG](Images/4-Conversion_to_numerical.PNG)
+![4-Conversion_to_numerical.PNG](Images/4-Conversion_to_numerical.PNG) &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 
 
-The final cleaned dataframes were converted and exported as a CSV file.
+The final cleaned dataframe was converted and exported as a CSV file. This CSV file serves as the source to the SQL database.
 
 
 
-![5-Export_to_CSV](Images/5-Export_to_CSV.PNG)
+![5-Export_to_CSV](Images/5-Export_to_CSV.PNG) &&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 
-
+&&&& D/B screenshots &&&&&&&&&&&&
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## MACHINE LEARNING DATA PROCESSING
 
-Jupyter notebook was utilised to further prepare the data and 
-
-Following Dependencies were imported to work on the machine learning element of this project.
+Jupyter notebook was utilised to further prepare the data and the following Dependencies were imported to work on the machine learning element of this project.
 
 
 
