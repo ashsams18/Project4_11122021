@@ -26,21 +26,48 @@ The csv file included 42 columns and over 744 thousand rows of data initially. T
 The csv file included horse racing history between 2005 and 2019. Data was made up of the horse winning history, track conditions, distance, horse parentage, horse weight, age, racing group, time of the year/season the races took place etc 
 
 DEFINITIONS OF THE INDEPENDENT VARIABLES EMPLOYED IN THE MODELS 
-Independent variable Variable definitions Market-generated 
-variable ln ðpsij ÞThe natural logarithm of the normalised final odds probability Fundamental variables 
-pre_s_ra Speed rating for the previous race in which the horse ran 
-avgsr4 The average of a horse’s speed rating in its last 4 races; 
-zero when there is no past run draw 
-Post-position in current race eps 
-Total prize money earnings (finishing first, second or third) to date/
-Number of races entered 
-newdis 1 indicates a horse that ran three or four of its last four races at a distance of 80% less than current distance, 0 otherwise 
-weight Weight carried by the horse in current race 
-win_run The percentage of the races won by the horse in its career 
-jnowin The number of wins by the jockey in career to date of race 
-jwinper The winning percentage of the jockey in career to date of race 
-jst1miss 1 indicates when the other jockey variables are missing; 0 otherwise 
-(THE JOURNAL OF PREDICTION MARKETS2007, 1 1)
+Race ID: The Id given during the race
+Date: The date the race took place
+Course: The course/place where the race is taking place
+Time: The time of the race
+Race_name: The name given to the race
+Class: Grouping of horses based on official ratings
+Band: 
+Dist.f.: Distance in Furlongs
+Dist.m.: Distance in Metres
+Going: The condition of the course track
+Season: The season of the race
+Race_group: Race group
+Race_type: Race Type
+Month: The month of the year that the race took place
+Year: The year the race took place
+Period: Period of the horse racing calendar
+Runners: Total Number of the horses racing
+Race_money: Total money allocated for the race
+Horse_name: The name of the horse racing
+Trainer: The name of the horse trainer
+Jockey: The horse jockey
+Pos: Position of the horse at the end of the race
+Btn: The amount of time the horse has lost the race
+Sp:
+Dec:
+Age: The age of the horse
+Weight: The weight of the horse in kg
+Lbs: The weight of the horse in pounds
+Gear: The blinkers, nose rolls, and bar plates
+Fin_time: Finish Time: the time the horse took to finish the race
+Or: Official Rating
+Ts: Top Speed
+Rpr (Racing Post Rating): Horse rating by Racing Post magazine
+Sire: The father of the horse
+Dam: The mother of the horse
+Damsire:  The horse’s grandfather on the mother's side 
+Comments: Comments made after the race
+Dec_clean:
+Probability: The calculated chance of the horse winning the race
+Exp_chance: Expected chance of a horse winning
+Act_score:  Score after racing
+Prize_money: Money awarded to the horses based on their positions
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -116,7 +143,7 @@ Further cleaning of the data was performed by reducing categorical variables (ba
 
 
 
-![4-Conversion_to_numerical.PNG](Images/4-Conversion_to_numerical.PNG) &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+![4-Conversion_to_numerical.PNG](Images/4-Conversion_to_numerical.PNG)
 
 
 
@@ -124,11 +151,18 @@ The final cleaned dataframe was converted and exported as a CSV file. This CSV f
 
 
 
-![5-Export_to_CSV](Images/5-Export_to_CSV.PNG) &&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+![5-Export_to_CSV](Images/5-Export_to_CSV.PNG)
 
 
-&&&& D/B screenshots &&&&&&&&&&&&
+## SQL DATABASE
 
+The cleaned CSV file was imported into the SQL DATABASE, which was created on PG ADMIN.
+
+![6](Images/6-SQL-DB.PNG)
+
+A connection to the SQL database was made on a new Jupyter notebook (Machine-learning) as this would serve as the resource for the data that will be processed in the machine learning element of this project.
+
+![7](Images/7-SQLConn.PNG)
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## MACHINE LEARNING DATA PROCESSING
@@ -137,24 +171,10 @@ Jupyter notebook was utilised to further prepare the data and the following Depe
 
 
 
-![6](Images/6-Dependencies-for-ML.PNG)
-
+![8](Images/8-Dependencies-for-ML.PNG)
 
 
 The machine learning data prepared above was imported into this notebook.
-
-The 'DATE' column was set as an index for the dataframe.
-
-
-
-![7](Images/7-Date-Set-Index.PNG)
-
-
-
-Connect prediction with output was performed.
-
-
-![8](Images/8-Prediction-to-Output.PNG)
 
 
 X was assigned as a dataframe of the features and y as a series of the outcome variable.
