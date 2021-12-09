@@ -1,5 +1,7 @@
 # Project 4
 ## TRAIN AN ALGORITHM TO ANALYZE HORSE RACING DATA AND PREDICT FUTURE TRENDS
+## PROJECT OUTLINE 
+The aim is to clean the data, utilizing columns that we need and uploading to a SQL database. We will use machine learning models to create a binary supervised algorithm to make predictions for unseen data in the future.
 
 ![horseracing.jpg](Images/horseracing.png)
 
