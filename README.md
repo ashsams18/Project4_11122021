@@ -14,7 +14,7 @@ Our group has identfied that there is a scope to develop a model which combines 
 
 ## RESOURCES
 * Kaggle (CSV File)
-* Jupyter Notebook (Coding)
+* Jupyter Notebook (Data cleaning and Machine Learning Codes)
 * PG Admin (SQL DATABASE)
 
 ## DATA COLLECTION
