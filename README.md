@@ -26,48 +26,48 @@ The csv file included 42 columns and over 744 thousand rows of data initially. T
 The csv file included horse racing history between 2005 and 2019. Data was made up of the horse winning history, track conditions, distance, horse parentage, horse weight, age, racing group, time of the year/season the races took place etc 
 
 DEFINITIONS OF THE INDEPENDENT VARIABLES EMPLOYED IN THE MODELS 
-Race ID: The Id given during the race
-Date: The date the race took place
-Course: The course/place where the race is taking place
-Time: The time of the race
-Race_name: The name given to the race
-Class: Grouping of horses based on official ratings
-Band: 
-Dist.f.: Distance in Furlongs
-Dist.m.: Distance in Metres
-Going: The condition of the course track
-Season: The season of the race
-Race_group: Race group
-Race_type: Race Type
-Month: The month of the year that the race took place
-Year: The year the race took place
-Period: Period of the horse racing calendar
-Runners: Total Number of the horses racing
-Race_money: Total money allocated for the race
-Horse_name: The name of the horse racing
-Trainer: The name of the horse trainer
-Jockey: The horse jockey
-Pos: Position of the horse at the end of the race
-Btn: The amount of time the horse has lost the race
-Sp:
-Dec:
-Age: The age of the horse
-Weight: The weight of the horse in kg
-Lbs: The weight of the horse in pounds
-Gear: The blinkers, nose rolls, and bar plates
-Fin_time: Finish Time: the time the horse took to finish the race
-Or: Official Rating
-Ts: Top Speed
-Rpr (Racing Post Rating): Horse rating by Racing Post magazine
-Sire: The father of the horse
-Dam: The mother of the horse
-Damsire:  The horse’s grandfather on the mother's side 
-Comments: Comments made after the race
-Dec_clean:
-Probability: The calculated chance of the horse winning the race
-Exp_chance: Expected chance of a horse winning
-Act_score:  Score after racing
-Prize_money: Money awarded to the horses based on their positions
+* Race ID: The Id given during the race
+* Date: The date the race took place
+* Course: The course/place where the race is taking place
+* Time: The time of the race
+* Race_name: The name given to the race
+* Class: Grouping of horses based on official ratings
+* Band: Age (of horse) band
+* Dist.f.: Distance in Furlongs
+* Dist.m.: Distance in Metres
+* Going: The condition of the course track
+* Season: The season of the race
+* Race_group: Race group
+* Race_type: Race Type
+* Month: The month of the year that the race took place
+* Year: The year the race took place
+* Period: Period of the horse racing calendar
+* Runners: Total Number of the horses racing
+* Race_money: Total money allocated for the race
+* Horse_name: The name of the horse racing
+* Trainer: The name of the horse trainer
+* Jockey: The horse jockey
+* Pos: Position of the horse at the end of the race
+* Btn: The amount of time the horse has lost the race
+* Sp: (No Information)
+* Dec: (No Information)
+* Age: The age of the horse
+* Weight: The weight of the horse in kg
+* Lbs: The weight of the horse in pounds
+* Gear: The blinkers, nose rolls, and bar plates
+* Fin_time: Finish Time: the time the horse took to finish the race
+* Or: Official Rating
+* Ts: Top Speed
+* Rpr (Racing Post Rating): Horse rating by Racing Post magazine
+* Sire: The father of the horse
+* Dam: The mother of the horse
+* Damsire:  The horse’s grandfather on the mother's side 
+* Comments: Comments made after the race
+* Dec_clean:  (No Information)
+* Probability: The calculated chance of the horse winning the race
+* Exp_chance: Expected chance of a horse winning
+* Act_score:  Score after racing
+* Prize_money: Money awarded to the horses based on their positions
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -76,35 +76,21 @@ Prize_money: Money awarded to the horses based on their positions
 Jupyter Notebook was utilised to access the raw data from the CSV files.
 The required dependencies were imported:
 
-pandas as pd,
-
-numpy as np,
-
-LogisticRegression,
-
-pyplot as plt,
-
-seaborn as sns,
-
-StandardScaler, 
-
-MinMaxScaler, 
-
-LabelEncoder,
-
-train_test_split,
-
-DecisionTreeClassifier, 
-
-plot_tree,
-
-metrics,
-
-preprocessing,
-
-RandomForestClassifier,
-
-make_classification
+* pandas as pd,
+* numpy as np,
+* LogisticRegression,
+* pyplot as plt,
+* seaborn as sns,
+* StandardScaler, 
+* MinMaxScaler, 
+* LabelEncoder,
+* train_test_split,
+* DecisionTreeClassifier, 
+* plot_tree,
+* metrics,
+* preprocessing,
+* RandomForestClassifier,
+* make_classification
 
 
 A 'for loop' was run to identify the unique categories across the columns.
@@ -114,9 +100,12 @@ A 'for loop' was run to identify the unique categories across the columns.
 
 
 
-A further review of the column data was performed and those features that weren't required in the model such as: 
+A further review of the column data was performed and those features that weren't required in the model such as:
+ 
 'race_ID', 'class','time','dist.f.','Month', 'Year', 'Period', 'Runners','fin_time', 'dec','weight','dec_clean','sire', 'dam', 'damsire', 'comment','race_name','btn','sp','or','rpr','horse_name','exp_chance','prob',
-were removed. Feature selection was based on elements in the data that contirbuted most to the prediction variable or output that we are interested in. Having irrelevant features in the data could decrease the accuracy of the model, especially the logistic regression that we are using. Our selection of features before modeling the data was to reduce overfitting, improve accuracy and reduce training time.
+were removed. 
+
+Feature selection was based on elements in the data that contirbuted most to the prediction variable or output that we are interested in. Having irrelevant features in the data could decrease the accuracy of the model, especially the logistic regression that we are using. Our selection of features before modeling the data was to reduce overfitting, improve accuracy and reduce training time.
 
 
 
