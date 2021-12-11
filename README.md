@@ -122,10 +122,9 @@ The columns in the dataframe were renamed for ease in understanding their meanin
 Based on the various columns explored, it is clearly necessary to develop a model which combines both fundamental features of each horse and market generated information.
 
 The number of unique values was reduced by binning 'rare' categorical variables on:
-1. band
-2. jockey
-3. trainer
-4. track condition  
+1. jockey
+2. trainer
+3. track condition  
 
 The raw data size was reduced to under 150K rows over 18 columns.
 Further cleaning of the data was performed by reducing categorical variables (band) and non numerical values to a numerical value in the btn (beaten) column. 
@@ -165,8 +164,7 @@ Jupyter notebook was utilised to further prepare the data and the following Depe
 
 The machine learning data prepared above was imported into this notebook.
 
-
-X was assigned as a dataframe of the features and y as a series of the outcome variable.
+Data balancing was performed. X was assigned as a dataframe of the features and y as a series of the outcome variable.
 
 
 
@@ -185,18 +183,14 @@ Labels ("Winner") denoted by y were assigned to the train and test data sets.
 X_dum.head(2)**
 
 
-sklearn was used to split the dataset and also to split the preprocessed data into a training and testing dataset.
-
-**X_train, X_test, y_train, y_test = train_test_split(X_dum, y_label, train_size = 0.6, random_state=1)**
-
-
-Next step was to scale and fit the data:
+sklearn was used to split the dataset. The next step was to scale and fit the data:
 
 **scaler = StandardScaler()**
 
 **X_scaler = scaler.fit(X_train)**
 
 **X_train_scaled = X_scaler.transform(X_train)**
+**X_valid_scaled = X_scaler.transform(X_valid)**
 **X_test_scaled = X_scaler.transform(X_test)**
 
 A Logistic Regression was performed:
@@ -204,10 +198,35 @@ A Logistic Regression was performed:
 **classifier = LogisticRegression(fit_intercept=True, random_state=1, max_iter = 400,verbose=0, multi_class='auto')**
 **classifier.fit(X_train_scaled,y_train)**
 **classifier.score(X_train_scaled,y_train)**
+**classifier.score(X_valid_scaled,y_valid)**
 **classifier.score(X_test_scaled,y_test)**
 
 which returned the following values:
 
-**Training Scaled Data Score: 0.9997335890878091**
-**Test  Scaled Data Score: 0.9993606138107417**
+**Training Scaled Data Score: 0.9388211788211788**
+**Valid Scaled Data Score: 0.7247442455242967**
+**Test  Scaled Data Score: 0.5612016618728028**
 
+Finally a RANDOM FOREST CLASSIFIER model was run.
+**model_r =RandomForestClassifier(n_estimators = 10, max_features='auto')**
+**model_r.fit(X_train,y_train)**
+**model_r.score(X_train,y_train)**
+**model_r.score(X_valid,y_valid)**
+**model_r.score(X_test,y_test)**
+
+A Confusion Matrix was used as a confirmation of the model:
+
+
+![11](Images/11-ConfusionMatrix.PNG)
+
+An accuracy of **0.825503355704698** was achieved.
+
+Below is a metrics classification report:
+
+
+![12](Images/12-MatrixClassReport.PNG)
+
+
+Below is a Model Summary Image
+
+![13](Images/113-ModelSummary.PNG)
