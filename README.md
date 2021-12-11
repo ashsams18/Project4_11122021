@@ -229,4 +229,4 @@ Below is a metrics classification report:
 
 Below is a Model Summary Image
 
-![13](Images/113-ModelSummary.PNG)
+![13](Images/13-ModelSummary.PNG)
