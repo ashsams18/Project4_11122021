@@ -100,13 +100,12 @@ A 'for loop' was run to identify the unique categories across the columns.
 
 
 
-A further review of the column data was performed and those features that weren't required in the model such as:
+A review of the column data was performed and those features that were duplicates in meaning e.g. columns with heading month, time, year were dropped and instead only 'Date' was kept. Also dist.f (distance in furlong) was dropped and dist.m (distance in metres) was kept. Having duplicate meanings in features would not have added value to the model. Other features that were removed include:
  
-'race_ID', 'class','time','dist.f.','Month', 'Year', 'Period', 'Runners','fin_time', 'dec','weight','dec_clean','sire', 'dam', 'damsire', 'comment','race_name','btn','sp','or','rpr','horse_name','exp_chance','prob',
-were removed. 
+'race_ID', 'class','time','dist.f.','Month', 'Year', 'Period', 'Runners','fin_time', 'dec','weight','dec_clean','sire', 'dam', 'damsire', comment','race_name','btn','sp','or','rpr','horse_name','exp_chance','prob',
+
 
 Feature selection was based on elements in the data that contirbuted most to the prediction variable or output that we are interested in. Having irrelevant features in the data could decrease the accuracy of the model, especially the logistic regression that we are using. Our selection of features before modeling the data was to reduce overfitting, improve accuracy and reduce training time.
-
 
 
 ![2-Dropped_DATA.PNG](Images/2-Dropped_DATA.PNG)
